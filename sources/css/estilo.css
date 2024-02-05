@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Lato-Regular.ttf';
+    src: url('sources/css/fonts/Lato') format('woff');
+
+    /* otros formatos */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium.ttf';
+    src: url('sources/css/fonts/Montserrat/static');
+}
+
+h1{
+    font-family: Lato-Regular;
+}
+body, form{
+    font-family: Montserrat-Medium;
+}
+
+footer {
+  
+    background-color: #eaeded;
+     padding: 10px;
+   }
+
+   .success-container {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
