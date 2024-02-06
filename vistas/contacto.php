@@ -1,6 +1,8 @@
 <?php
 require_once '../controladores/contactocontrolador.php';
 require_once '../modelos/contactomodelo.php';
+require_once ('../middlewares/Middleware.php');
+Middleware::verificarSesion();
 
 // Procesamiento para agregar el nuevo contacto
 if (isset($_POST['agregar_contacto'])) {

@@ -1,7 +1,8 @@
 <?php
 require_once '../controladores/EnvioControlador.php';
 require_once '../modelos/EnvioModelo.php';
-
+require_once ('../middlewares/Middleware.php');
+Middleware::verificarSesion();
 
 // Procesamiento para agregar una nuevo envio si se envió el formulario
 if (isset($_POST['agregar_envio'])) {

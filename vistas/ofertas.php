@@ -1,8 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['id_usuario'])) {
-    header("location: login.php");
-}
+require_once ('../middlewares/Middleware.php');
+Middleware::verificarSesion();
 
 $id_usuario = $_SESSION['id_usuario'];
 

@@ -1,6 +1,8 @@
 <?php
-require_once ('../middlewares/Middleware.php');
-Middleware::verificarSesion();
+session_start();
+if (empty($_SESSION['id_usuario'])) {
+    header("location: ../vistas/login.php");
+}
 include_once("../config/conexiondb.php");
 include_once("../config/variablesentorno.php");
 ?>
@@ -10,7 +12,7 @@ include_once("../config/variablesentorno.php");
 
 <head>
     <?php require_once "../vistas/modulos/header.php"; ?>
-    <br>
+    <?php require_once __DIR__ . "/../vistas/modulos/menu.php"; ?>
 </head>
 
 <body>
@@ -30,7 +32,7 @@ include_once("../config/variablesentorno.php");
 
                     if ($oferta) {
                         echo '<div class="container card">';
-                        echo '<h2>Oferta a eliminar</h2>';
+                        echo '<h2>Detalles de la Oferta a eliminar</h2>';
                         echo '<div class="table-responsive">';
                         echo '<table class="table table-bordered">';
                           
@@ -59,17 +61,12 @@ include_once("../config/variablesentorno.php");
                             $sql = "DELETE FROM oferta WHERE id_oferta = $id_oferta";
 
                             if ($delete->getMysqli()->query($sql)) {
-                                echo '<div class="container  text-danger">';
-                                echo '<br> ';
-                                echo '<div class="alert alert-danger text-center" role="alert">
-                                Oferta Eliminada.
-                            </div>';
+                                echo '<div class="container">';
+                                echo "La oferta se eliminó correctamente.";
                                 echo '</div>';
                             } else {
                                 echo '<div class="container">';
-                                echo '<br> ';
                                 echo "Error al eliminar la oferta: " . $delete->getMysqli()->error;
-                                echo '<br> ';
                                 echo '</div> ';
                             }
                         } else {

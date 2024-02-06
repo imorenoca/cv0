@@ -1,10 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION['id_usuario'])) {
+  header("location: login.php");
+}
 
 include_once("../config/conexiondb.php");
 include_once("../config/variablesentorno.php");
-require_once ('../middlewares/Middleware.php');
-Middleware::verificarSesion();
-
 
 // agregar empresa.-- envia a insertarOferta.
 ?>
@@ -35,7 +36,7 @@ Middleware::verificarSesion();
   <h1 class="text-center">Agregar Oferta</h1>
   <div class="container  col-auto">
 
-    <form action="insertarOferta.php" method="POST" class="row g-3 mt-3">
+    <form action="insertarOferta.php" method="POST" class="row g-3">
       <!-- <input type="hidden" name="id_usuario" value="1">-->
       <?php if (isset($_SESSION['id_usuario'])): ?>
         <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']; ?>">
@@ -43,12 +44,12 @@ Middleware::verificarSesion();
         <p>Error: $_SESSION['id_usuario'] no está definido.</p>
       <?php endif; ?>
 
-      <div class="col-6">
+      <div class="">
 
         <label class="form-label">Fecha Alta</label>
         <input type="date" class="form-control" name="fecha_alta" value="<?php echo date('Y-m-d'); ?>">
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="form-label">Envío</label>
         <select name="tipo" class="form-control mb-3">
@@ -66,7 +67,7 @@ Middleware::verificarSesion();
           ?>
         </select>
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label for="selectEmpresa" class="form-label">Empresa</label>
         <select name="nombre_empresa" id="selectEmpresa" class="form-select mb-3">
@@ -83,13 +84,13 @@ Middleware::verificarSesion();
 
         </select>
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="form-label">Puesto</label>
         <input type="text" name="nombre_puesto" class="form-control">
 
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label for="selectContacto" class="form-label">Contacto</label>
         <select name="nombre_contacto" id="selectContacto" class="form-select mb-3">
@@ -107,12 +108,12 @@ Middleware::verificarSesion();
 
         </select>
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="form-label">Tecnología</label>
         <input name="tecnologia" type="text" class="form-control">
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label for="selectTrabajo" class="form-label">Tipo</label>
         <select name="tipo_trabajo" id="selectTipo" class="form-select mb-3">
@@ -139,12 +140,12 @@ Middleware::verificarSesion();
 
         </select>
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label for="experiencia" class="form-label">Años</label>
         <input name="experiencia" type="text" class="form-control">
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="form-label">Inglés</label>
         <select name="ingles" id="selectTipo" class="form-select mb-3">
@@ -172,12 +173,12 @@ Middleware::verificarSesion();
           ?>
         </select>
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="col-form-label">Fecha Fin</label>
         <input type="date" name="fecha_fin" class="form-control">
       </div>
-      <div class="col-6">
+      <div class="">
 
         <label class="col-form-label">Estado</label>
         <select name="estado" id="selectEstado" class="form-select mb-3">

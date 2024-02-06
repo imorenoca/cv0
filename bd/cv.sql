@@ -43,7 +43,8 @@ INSERT INTO `contacto` (`id_contacto`, `nombre_contacto`, `cargo`, `correo`, `te
 (1, 'John Doe', 'Senior Talent Acquisition Specialist', 'john.doe@example.com', '625000000'),
 (2, 'Philip K. Dick', 'Coordinador de Recursos Humanos', 'k.dick@example.com', '987654210'),
 (9, 'Amelie Nothomb', 'CTO', 'nothomb.amelie@fantastica.com', '555123'),
-(10, 'Sin contacto', NULL, NULL, NULL);
+(10, 'Sin contacto', NULL, NULL, NULL),
+(16, 'María de los Amores', 'Secretaria', 'secretaria@soyyo.com', '55555555');
 
 -- --------------------------------------------------------
 
@@ -62,10 +63,11 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id_empresa`, `nombre_empresa`, `web`) VALUES
-(1, 'Consultora', 'http://www.consultora.com'),
-(2, 'Agencia', 'https://www.agencia.es'),
-(3, 'Multinacional', 'http://granmultinacional.es'),
-(4, 'Sin empresa asignada', NULL);
+(1, 'Grupo NTT Data', 'http://www.grupontt.com'),
+(2, 'Serviform', 'https://www.servinform.es'),
+(3, 'Gran Multinacional ', 'http://granmultinacional.es'),
+(4, 'Sin empresa asignada', NULL),
+(46, 'Telefónica', 'https://www.telefonica.es');
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,8 @@ CREATE TABLE `envio` (
 INSERT INTO `envio` (`id_envio`, `tipo`) VALUES
 (1, 'Infojobs.net'),
 (5, 'Autocandidatura'),
-(11, 'Correo Ordinario');
+(11, 'Correo Ordinario'),
+(12, 'Monster');
 
 -- --------------------------------------------------------
 
@@ -115,6 +118,12 @@ CREATE TABLE `oferta` (
 
 INSERT INTO `oferta` (`id_oferta`, `fecha_inicio`, `fecha_fin`, `nombre_puesto`, `experiencia_anios`, `ingles`, `tecnologia`, `id_envio`, `id_empresa`, `estado`, `tipo_trabajo`, `id_usuario`, `id_contacto`) VALUES
 (68, '2023-11-14', '0000-00-00', 'Desarrollador Web', 0, 'no', 'Php', 5, 1, 'abierto', 'presencial', 1, 2),
+(69, '2023-11-14', '2023-11-14', 'Barrendero', 0, 'no', 'Escoba', 5, 4, 'cerrado', 'híbrido', 1, 1),
+(71, '2023-11-14', '0000-00-00', '', 0, 'no', '', 5, 3, 'cerrado', 'presencial', 1, 10),
+(83, '2023-11-15', '0000-00-00', 'Carpintería', 0, 'no', '', 1, 3, 'abierto', 'híbrido', 3, 1),
+(84, '2023-11-15', '0000-00-00', '', 0, 'no', '', 1, 2, 'abierto', 'presencial', 3, 9),
+(85, '2023-11-15', '0000-00-00', 'Panificador', 0, 'no', '', 5, 2, 'abierto', 'híbrido', 3, 9),
+(87, '2023-11-17', '0000-00-00', 'Alicatador', 0, 'no', '', 5, 3, 'abierto', 'híbrido', 1, 2),
 (91, '2023-11-27', '0000-00-00', 'Programador', 0, 'si', 'Java', 5, 3, 'abierto', 'híbrido', 9, 9),
 (99, '2023-12-02', '0000-00-00', 'Desarrollador Web', 5, 'no', '', 11, 3, 'abierto', 'híbrido', 6, 1),
 (101, '2023-10-02', '2023-11-27', 'Frontend', 6, 'no', 'Php', 11, 2, 'abierto', 'híbrido', 6, 9);

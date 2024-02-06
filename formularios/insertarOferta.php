@@ -1,6 +1,8 @@
 <?php
-require_once ('../middlewares/Middleware.php');
-Middleware::verificarSesion();
+session_start();
+if(empty($_SESSION['id_usuario'])){
+    header("location: ../vistas/login.php");
+}
 include_once("../config/conexiondb.php");
 include_once("../config/variablesentorno.php");
 
@@ -49,4 +51,4 @@ if ($stmt = $conexion->getMysqli()->prepare($query)) {
 }
 
 $conexion->closeConnection();
-
+?>

@@ -1,7 +1,8 @@
 <?php
 require_once '../controladores/empresacontrolador.php';
 require_once '../modelos/empresamodelo.php';
-
+require_once ('../middlewares/Middleware.php');
+Middleware::verificarSesion();
 
 
 // Procesamiento para agregar una nueva empresa si se envió el formulario
