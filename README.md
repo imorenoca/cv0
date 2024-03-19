@@ -3,7 +3,7 @@ Proyecto DAW.
 
 Este es mi Proyecto DAW para el Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
 
-**Finalidad del repositorio: Mejorar el código desarrollado, quitar código duplicado, utilización de enrutamiento, aplicación de patrones de diseño, en definitiva mejorar mis habilidades de programación.**
+**Finalidad del repositorio**: Mejorar el código desarrollado, quitar código duplicado, utilización de enrutamiento, aplicación de patrones de diseño, en definitiva mejorar mis habilidades de programación.
 
 **Aplicación web para la gestión del seguimiento de envío de currículos a ofertas de empleo y/o prácticas en empresa.**
 
@@ -39,29 +39,29 @@ Visual Studio Code: editor utilizado para la codificación de HTML, CSS, JavaScr
 Los Requisitos Funcionales son los siguientes, agrupados por Casos de Uso
 1.	Usuario no registrado puede hacer Registro, pueden registrarse como rol usuario si el usuario no existe y es válido.
 2.	Usuario registrado puede iniciar sesión y cerrar sesión. Dos tipos de usuarios registrados por rol: administrador y usuario.
-3.	 Rol administrador:
- a.	Listar usuarios registrados por nombre y correo.
-4.	Rol usuario registrado Ofertas. 
- a.	Ver su listado de ofertas específico. 
- b.	Modificar sus ofertas. 
- c.	Eliminar sus ofertas. 
- d.	Añadir ofertas
- e.	Filtrar ofertas por estado abierto, cerrado, guardado. 
-5.	Rol usuario registrado Envíos
- a.	Ver listado tipos de envío.
- b.	Modificar tipo de envíos.
- c.	Eliminar tipos de envíos si no está relacionado con ofertas.
- d.	Añadir tipos de envío.
-6.	Rol usuario registrado listado de empresas.
- a.	Ver listado de empresas. 
- b.	Modificar empresas. 
- c.	Eliminar empresas si no están relacionadas con las ofertas.
- d.	Añadir empresas. 
-7.	Rol usuario registrado Contactos:
- a.	Ver listado
- b.	Modificar Contactos.
- c.	Añadir contactos.
- d.	Eliminar contactos.
+3.	 Rol administrador:  
+ a.	Listar usuarios registrados por nombre y correo.  
+4.	Rol usuario registrado Ofertas.   
+ a.	Ver su listado de ofertas específico.   
+ b.	Modificar sus ofertas.   
+ c.	Eliminar sus ofertas.   
+ d.	Añadir ofertas  
+ e.	Filtrar ofertas por estado abierto, cerrado, guardado.   
+5.	Rol usuario registrado Envíos  
+ a.	Ver listado tipos de envío.  
+ b.	Modificar tipo de envíos.  
+ c.	Eliminar tipos de envíos si no está relacionado con ofertas.  
+ d.	Añadir tipos de envío.  
+6.	Rol usuario registrado listado de empresas.  
+ a.	Ver listado de empresas.   
+ b.	Modificar empresas.   
+ c.	Eliminar empresas si no están relacionadas con las ofertas.  
+ d.	Añadir empresas.   
+7.	Rol usuario registrado Contactos:  
+ a.	Ver listado  
+ b.	Modificar Contactos.  
+ c.	Añadir contactos.  
+ d.	Eliminar contactos.  
 
 **Requisitos no funcionales:**
 
