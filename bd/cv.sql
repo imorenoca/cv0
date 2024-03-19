@@ -158,15 +158,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `usuario`, `correo`, `password`, `id_rol`) VALUES
 (1, 'usuario', 'usuario@example.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(2, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(3, 'isa', 'isamor@gmail.com', '59dc310530b44e8dd1231682b4cc5f2458af1c60', 2),
-(4, 'lola', 'lola@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(6, 'pepi', 'pepi@gym.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(7, 'amelie', 'amelie@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(8, 'otro', 'otro@soyyo.es', '356a192b7913b04c54574d18c28d46e6395428ab', 2),
-(9, 'nuevo', 'nuevo@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(10, 'pio', 'pio@yu.es', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(11, 'Andres', 'andres@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2);
+(2, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1)
+;
 
 --
 -- Índices para tablas volcadas
