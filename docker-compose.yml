@@ -1,0 +1,55 @@
+services:
+  app:
+    build: .
+    container_name: cv0-app
+    ports:
+      - "8080:80"
+    volumes:
+      # Monta el código en caliente: los cambios en tu editor se reflejan sin reconstruir la imagen
+      - .:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_USERNAME: root
+      DB_PASSWORD: rootpass
+      DB_DATABASE: cv
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.4
+    container_name: cv0-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      # No se define MYSQL_DATABASE: el propio dump bd/cv.sql hace su CREATE DATABASE cv,
+      # así que definirla aquí también provocaría un error "database exists" y el resto
+      # del dump no se ejecutaría.
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # Carga el dump inicial la PRIMERA vez que se crea el volumen
+      - ./bd/cv.sql:/docker-entrypoint-initdb.d/01-cv.sql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: cv0-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  db_data:
