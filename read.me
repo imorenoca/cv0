@@ -5,3 +5,27 @@ Se cambia Variables de entorno.php
 
 docker compose up --build
 
+- Manejo de Sesión entre páginas.-> Front Controller / router -> Middleware
+
+Antes se considera necesario definir funcionalidades y casos de uso.
+
+*Lista final de actores y casos de uso, cerrada
+
+Usuario no registrado
+
+CU-01 — Registro
+
+Usuario registrado (rol: usuario)
+
+CU-02 — Iniciar sesión
+CU-03 — Cerrar sesión
+CU-04 — Gestionar ofertas
+CU-05 — Gestionar empresas
+CU-06 — Gestionar contactos
+CU-07 — Gestionar envíos
+
+Administrador (rol: administrador)
+
+CU-02 — Iniciar sesión (mismo caso de uso, actor distinto — el login es compartido por ambos roles registrados)
+CU-03 — Cerrar sesión (igual, compartido)
+CU-08 — Listar usuarios
