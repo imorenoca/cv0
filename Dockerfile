@@ -4,6 +4,10 @@ FROM php:8.3-apache
 RUN docker-php-ext-install mysqli \
     && docker-php-ext-enable mysqli
 
+# Extensión para trabajar con archivos comprimidos (gzip, zip, etc.)
+RUN apt-get update && apt-get install -y libzip-dev unzip \
+    && docker-php-ext-install zip
+
 # Instalar Composer (gestor de dependencias de PHP)
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
  

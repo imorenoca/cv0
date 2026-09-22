@@ -1,4 +1,6 @@
 {
     "name": "imorenoca/cvdockerizado",
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^12.5"
+    }
 }
