@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: mariadb:10.4
+    image: mariadb:11.8
     container_name: cv0-db
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
