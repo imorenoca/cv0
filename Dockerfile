@@ -3,6 +3,9 @@ FROM php:8.3-apache
 # Extensiones necesarias: mysqli para la conexión a BD
 RUN docker-php-ext-install mysqli \
     && docker-php-ext-enable mysqli
+
+# Instalar Composer (gestor de dependencias de PHP)
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
  
 # Habilitar mod_rewrite: ahora sí lo usamos para las URLs limpias del router
 RUN a2enmod rewrite
