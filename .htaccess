@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Bloquea el acceso directo a cualquier .php que no sea index.php
+RewriteCond %{REQUEST_URI} \.php$
+RewriteCond %{REQUEST_URI} !^/index\.php$
+RewriteRule ^ - [F,L]
+
+# Todo lo que no sea archivo/carpeta real, al router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
