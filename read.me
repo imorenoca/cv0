@@ -261,3 +261,17 @@ Se pone el enrutamiento.
 Se crean páginas de bienvenida:
 bienvenida.php
 error404.php.
+
+Instalar Composer.
+En Dockerfile
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+docker compose up --build -d
+
+Versión
+docker compose exec app composer --version
+
+Crear el composer.json
+docker compose exec app composer init --no-interaction --name=imorenoca/cvdockerizado
+
+docker compose exec app composer require --dev phpunit/phpunit
